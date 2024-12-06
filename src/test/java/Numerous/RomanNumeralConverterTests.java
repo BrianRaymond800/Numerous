@@ -18,4 +18,10 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(2);
         Assertions.assertEquals("II", romanNumeral);
     }
+
+    @Test
+    void testConvertFour(){
+        String romanNumeral = converter.convertToRomanNumeral(4);
+        Assertions.assertEquals("IV", romanNumeral);
+    }
 }
