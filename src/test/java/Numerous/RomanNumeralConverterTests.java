@@ -132,4 +132,10 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(399);
         Assertions.assertEquals("CCCXCIX", romanNumeral);
     }
+
+    @Test
+    void testConvertFourHundred(){
+        String romanNumeral = converter.convertToRomanNumeral(400);
+        Assertions.assertEquals("CD", romanNumeral);
+    }
 }

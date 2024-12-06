@@ -3,6 +3,15 @@ package org.Numerous;
 public class RomanNumeralConverter {
     public String convertToRomanNumeral(int number){
         String numeral = "";
+        if(number < 400){
+            numeral = convertLessThanFourHundred(number, numeral);
+        } else {
+            numeral += "CD";
+        }
+        return numeral;
+    }
+
+    private String convertLessThanFourHundred(int number, String numeral){
         if(number < 90){
             numeral = convertLessThanNinety(number, numeral);
         }else if(number < 100){
