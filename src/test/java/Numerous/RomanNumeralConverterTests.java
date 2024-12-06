@@ -42,4 +42,10 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(9);
         Assertions.assertEquals("IX", romanNumeral);
     }
+
+    @Test
+    void testConvertTen(){
+        String romanNumeral = converter.convertToRomanNumeral(10);
+        Assertions.assertEquals("X", romanNumeral);
+    }
 }

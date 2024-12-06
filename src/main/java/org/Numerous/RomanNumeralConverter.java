@@ -5,9 +5,10 @@ public class RomanNumeralConverter {
         String numeral = "";
         if(number < 9){
             numeral = convertLessThanNine(number, numeral);
-        }
-        else {
+        } else if(number < 10){
             numeral += "IX";
+        } else{
+            numeral += "X";
         }
         return numeral;
     }
@@ -15,9 +16,9 @@ public class RomanNumeralConverter {
     private String convertLessThanNine(int number, String numeral){
         if(number < 4){
             numeral = convertLessThanFour(number, numeral);
-        }else if(number < 5){
+        } else if(number < 5){
             numeral += "IV";
-        }else{
+        } else{
             numeral += "V";
             number -= 5;
             numeral += convertToRomanNumeral(number);
