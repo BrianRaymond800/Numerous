@@ -18,11 +18,12 @@ public class RomanNumeralConverter {
         if (number < numbers[0] - numbers[2]){
             numeral = convertLessThanNineHundred(number, numeral);
         }else if(number < numbers[0]){
-            numeral += "CM";
+            numeral += numerals[2];
+            numeral += numerals[0];
             number -= numbers[0] - numbers[2];
             numeral += convertToRomanNumeral(number);
         }else{
-            numeral += "M";
+            numeral += numerals[0];
             number -= numbers[0];
             numeral += convertToRomanNumeral(number);
         }
@@ -36,11 +37,12 @@ public class RomanNumeralConverter {
         if(number < numbers[1] - numbers[2]){
             numeral = convertLessThanFourHundred(number, numeral);
         } else if(number < numbers[1]){
-            numeral += "CD";
+            numeral += numerals[2];
+            numeral += numerals[1];
             number -= numbers[1] - numbers[2];
             numeral += convertToRomanNumeral(number);
         } else{
-            numeral += "D";
+            numeral += numerals[1];
             number -= numbers[1];
             numeral += convertToRomanNumeral(number);
         }
@@ -54,11 +56,12 @@ public class RomanNumeralConverter {
         if(number < numbers[2] - numbers[4]){
             numeral = convertLessThanNinety(number, numeral);
         }else if(number < numbers[2]){
-            numeral += "XC";
+            numeral += numerals[4];
+            numeral += numerals[2];
             number -= numbers[2] - numbers[4];
             numeral += convertToRomanNumeral(number);
         }else{
-            numeral += "C";
+            numeral += numerals[2];
             number -= numbers[2];
             numeral += convertToRomanNumeral(number);
         }
@@ -72,11 +75,12 @@ public class RomanNumeralConverter {
         if(number < numbers[3] - numbers[4]){
             numeral = convertLessThanForty(number, numeral);
         } else if(number < numbers[3]){
-            numeral += "XL";
+            numeral += numerals[4];
+            numeral += numerals[3];
             number -= numbers[3] - numbers[4];
             numeral += convertToRomanNumeral(number);
         } else{
-            numeral += "L";
+            numeral += numerals[3];
             number -= numbers[3];
             numeral += convertToRomanNumeral(number);
         }
@@ -90,11 +94,12 @@ public class RomanNumeralConverter {
         if(number < numbers[4] - numbers[6]){
             numeral = convertLessThanNine(number, numeral);
         } else if(number < numbers[4]){
-            numeral += "IX";
+            numeral += numerals[6];
+            numeral += numerals[4];
             number -= numbers[4] - numbers[6];
             numeral += convertToRomanNumeral(number);
         } else{
-            numeral += "X";
+            numeral += numerals[4];
             number -= numbers[4];
             numeral += convertToRomanNumeral(number);
         }
@@ -108,11 +113,12 @@ public class RomanNumeralConverter {
         if(number < numbers[5] - numbers[6]){
             numeral = convertLessThanFour(number, numeral);
         } else if(number < numbers[5]){
-            numeral += "IV";
+            numeral += numerals[6];
+            numeral += numerals[5];
             number -= numbers[5] - numbers[6];
             numeral += convertToRomanNumeral(number);
         } else{
-            numeral += "V";
+            numeral += numerals[5];
             number -= numbers[5];
             numeral += convertToRomanNumeral(number);
         }
@@ -129,7 +135,7 @@ public class RomanNumeralConverter {
         } else if(number < numbers[6]){
 
         } else{
-            numeral += "I";
+            numeral += numerals[6];
             number -= numbers[6];
             numeral += convertToRomanNumeral(number);
         }
