@@ -1,88 +1,101 @@
 package org.Numerous;
 
 public class RomanNumeralConverter {
+
+    private String[] numerals = {"M", "D", "C", "L", "X", "V", "I"};
+    private int[] numbers = {1000, 500, 100, 50, 10, 5, 1};
+
     public String convertToRomanNumeral(int number){
         String numeral = "";
-        if (number < 900){
+        numeral = convertLessThanFourThousand(number, numeral);
+        return numeral;
+    }
+
+    private String convertLessThanFourThousand(int number, String numeral){
+        if (number < numbers[0] - numbers[2]){
             numeral = convertLessThanNineHundred(number, numeral);
-        }else if(number < 1000){
+        }else if(number < numbers[0]){
             numeral += "CM";
-            number -= 900;
+            number -= numbers[0] - numbers[2];
             numeral += convertToRomanNumeral(number);
         }else{
             numeral += "M";
-            number -= 1000;
+            number -= numbers[0];
             numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
 
     private String convertLessThanNineHundred(int number, String numeral){
-        if(number < 400){
+        if(number < numbers[1] - numbers[2]){
             numeral = convertLessThanFourHundred(number, numeral);
-        } else if(number < 500){
+        } else if(number < numbers[1]){
             numeral += "CD";
-            number -= 400;
+            number -= numbers[1] - numbers[2];
             numeral += convertToRomanNumeral(number);
         } else{
             numeral += "D";
-            number -= 500;
+            number -= numbers[1];
             numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
 
     private String convertLessThanFourHundred(int number, String numeral){
-        if(number < 90){
+        if(number < numbers[2] - numbers[4]){
             numeral = convertLessThanNinety(number, numeral);
-        }else if(number < 100){
+        }else if(number < numbers[2]){
             numeral += "XC";
-            number -= 90;
+            number -= numbers[2] - numbers[4];
             numeral += convertToRomanNumeral(number);
         }else{
             numeral += "C";
-            number -= 100;
+            number -= numbers[2];
             numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
 
     private String convertLessThanNinety(int number, String numeral){
-        if(number < 40){
+        if(number < numbers[3] - numbers[4]){
             numeral = convertLessThanForty(number, numeral);
-        } else if(number < 50){
+        } else if(number < numbers[3]){
             numeral += "XL";
-            number -= 40;
+            number -= numbers[3] - numbers[4];
             numeral += convertToRomanNumeral(number);
         } else{
             numeral += "L";
-            number -= 50;
+            number -= numbers[3];
             numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
 
     private String convertLessThanForty(int number, String numeral){
-        if(number < 9){
+        if(number < numbers[4] - numbers[6]){
             numeral = convertLessThanNine(number, numeral);
-        } else if(number < 10){
+        } else if(number < numbers[4]){
             numeral += "IX";
+            number -= numbers[4] - numbers[6];
+            numeral += convertToRomanNumeral(number);
         } else{
             numeral += "X";
-            number -= 10;
+            number -= numbers[4];
             numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
 
     private String convertLessThanNine(int number, String numeral){
-        if(number < 4){
+        if(number < numbers[5] - numbers[6]){
             numeral = convertLessThanFour(number, numeral);
-        } else if(number < 5){
+        } else if(number < numbers[5]){
             numeral += "IV";
+            number -= numbers[5] - numbers[6];
+            numeral += convertToRomanNumeral(number);
         } else{
             numeral += "V";
-            number -= 5;
+            number -= numbers[5];
             numeral += convertToRomanNumeral(number);
         }
         return numeral;
