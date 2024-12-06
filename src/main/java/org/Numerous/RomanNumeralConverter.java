@@ -3,6 +3,16 @@ package org.Numerous;
 public class RomanNumeralConverter {
     public String convertToRomanNumeral(int number){
         String numeral = "";
+        if(number < 9){
+            numeral = convertLessThanNine(number, numeral);
+        }
+        else {
+            numeral += "IX";
+        }
+        return numeral;
+    }
+
+    private String convertLessThanNine(int number, String numeral){
         if(number < 4){
             numeral = convertLessThanFour(number, numeral);
         }else if(number < 5){
@@ -13,6 +23,7 @@ public class RomanNumeralConverter {
             numeral += convertToRomanNumeral(number);
         }
         return numeral;
+
     }
 
     private String convertLessThanFour(int number, String numeral){

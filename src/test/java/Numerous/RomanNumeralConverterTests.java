@@ -36,4 +36,10 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(6);
         Assertions.assertEquals("VI", romanNumeral);
     }
+
+    @Test
+    void testConvertNine(){
+        String romanNumeral = converter.convertToRomanNumeral(9);
+        Assertions.assertEquals("IX", romanNumeral);
+    }
 }
