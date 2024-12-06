@@ -120,4 +120,16 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(99);
         Assertions.assertEquals("XCIX", romanNumeral);
     }
+
+    @Test
+    void testConvertOneHundred(){
+        String romanNumeral = converter.convertToRomanNumeral(100);
+        Assertions.assertEquals("C", romanNumeral);
+    }
+
+    @Test
+    void testConvertThreeHundredNinetyNine(){
+        String romanNumeral = converter.convertToRomanNumeral(399);
+        Assertions.assertEquals("CCCXCIX", romanNumeral);
+    }
 }

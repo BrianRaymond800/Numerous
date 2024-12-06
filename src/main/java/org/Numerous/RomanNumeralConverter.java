@@ -5,9 +5,13 @@ public class RomanNumeralConverter {
         String numeral = "";
         if(number < 90){
             numeral = convertLessThanNinety(number, numeral);
-        }else{
+        }else if(number < 100){
             numeral += "XC";
             number -= 90;
+            numeral += convertToRomanNumeral(number);
+        }else{
+            numeral += "C";
+            number -= 100;
             numeral += convertToRomanNumeral(number);
         }
         return numeral;
