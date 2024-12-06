@@ -2,6 +2,10 @@ package org.Numerous;
 
 public class RomanNumeralConverter {
     public String convertToRomanNumeral(int number){
-        return "I";
+        String numeral = "";
+        for(int i = 0; i < number; i ++){
+            numeral += "I";
+        }
+        return numeral;
     }
 }

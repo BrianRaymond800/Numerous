@@ -12,4 +12,10 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(1);
         Assertions.assertEquals("I", romanNumeral);
     }
+
+    @Test
+    void testConvertTwo(){
+        String romanNumeral = converter.convertToRomanNumeral(2);
+        Assertions.assertEquals("II", romanNumeral);
+    }
 }
