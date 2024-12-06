@@ -15,12 +15,13 @@ public class RomanNumeralConverter {
         if(number == 0){
             return "";
         }
-        if (number < numbers[0] - numbers[2]){
+        int subtractionNumber = 0 + 2 - (0 % 2);
+        if (number < numbers[0] - numbers[subtractionNumber]){
             numeral = convertLessThanNineHundred(number, numeral);
         }else if(number < numbers[0]){
-            numeral += numerals[2];
+            numeral += numerals[subtractionNumber];
             numeral += numerals[0];
-            number -= numbers[0] - numbers[2];
+            number -= numbers[0] - numbers[subtractionNumber];
             numeral += convertToRomanNumeral(number);
         }else{
             numeral += numerals[0];
@@ -34,12 +35,13 @@ public class RomanNumeralConverter {
         if(number == 0){
             return "";
         }
-        if(number < numbers[1] - numbers[2]){
+        int subtractionNumber = 1 + 2 - (1 % 2);
+        if(number < numbers[1] - numbers[subtractionNumber]){
             numeral = convertLessThanFourHundred(number, numeral);
         } else if(number < numbers[1]){
-            numeral += numerals[2];
+            numeral += numerals[subtractionNumber];
             numeral += numerals[1];
-            number -= numbers[1] - numbers[2];
+            number -= numbers[1] - numbers[subtractionNumber];
             numeral += convertToRomanNumeral(number);
         } else{
             numeral += numerals[1];
@@ -53,12 +55,13 @@ public class RomanNumeralConverter {
         if(number == 0){
             return "";
         }
-        if(number < numbers[2] - numbers[4]){
+        int subtractionNumber = 2 + 2 - (2 % 2);
+        if(number < numbers[2] - numbers[subtractionNumber]){
             numeral = convertLessThanNinety(number, numeral);
         }else if(number < numbers[2]){
-            numeral += numerals[4];
+            numeral += numerals[subtractionNumber];
             numeral += numerals[2];
-            number -= numbers[2] - numbers[4];
+            number -= numbers[2] - numbers[subtractionNumber];
             numeral += convertToRomanNumeral(number);
         }else{
             numeral += numerals[2];
@@ -72,12 +75,13 @@ public class RomanNumeralConverter {
         if(number == 0){
             return "";
         }
-        if(number < numbers[3] - numbers[4]){
+        int subtractionNumber = 3 + 2 - (3 % 2);
+        if(number < numbers[3] - numbers[subtractionNumber]){
             numeral = convertLessThanForty(number, numeral);
         } else if(number < numbers[3]){
-            numeral += numerals[4];
+            numeral += numerals[subtractionNumber];
             numeral += numerals[3];
-            number -= numbers[3] - numbers[4];
+            number -= numbers[3] - numbers[subtractionNumber];
             numeral += convertToRomanNumeral(number);
         } else{
             numeral += numerals[3];
@@ -91,12 +95,13 @@ public class RomanNumeralConverter {
         if(number == 0){
             return "";
         }
-        if(number < numbers[4] - numbers[6]){
+        int subtractionNumber = 4 + 2 - (4 % 2);
+        if(number < numbers[4] - numbers[subtractionNumber]){
             numeral = convertLessThanNine(number, numeral);
         } else if(number < numbers[4]){
-            numeral += numerals[6];
+            numeral += numerals[subtractionNumber];
             numeral += numerals[4];
-            number -= numbers[4] - numbers[6];
+            number -= numbers[4] - numbers[subtractionNumber];
             numeral += convertToRomanNumeral(number);
         } else{
             numeral += numerals[4];
@@ -110,12 +115,13 @@ public class RomanNumeralConverter {
         if(number == 0){
             return "";
         }
-        if(number < numbers[5] - numbers[6]){
+        int subtractionNumber = 5 + 2 - (5 % 2);
+        if(number < numbers[5] - numbers[subtractionNumber]){
             numeral = convertLessThanFour(number, numeral);
         } else if(number < numbers[5]){
-            numeral += numerals[6];
+            numeral += numerals[subtractionNumber];
             numeral += numerals[5];
-            number -= numbers[5] - numbers[6];
+            number -= numbers[5] - numbers[subtractionNumber];
             numeral += convertToRomanNumeral(number);
         } else{
             numeral += numerals[5];
@@ -130,10 +136,14 @@ public class RomanNumeralConverter {
         if(number == 0){
             return "";
         }
-        if(number < numbers[6] - numbers[8]){
+        int subtractionNumber = 6 + 2 - (6 % 2);
+        if(number < numbers[6] - numbers[subtractionNumber]){
 
         } else if(number < numbers[6]){
-
+            numeral += numerals[subtractionNumber];
+            numeral += numerals[6];
+            number -= numbers[6] - numbers[subtractionNumber];
+            numeral += convertToRomanNumeral(number);
         } else{
             numeral += numerals[6];
             number -= numbers[6];
