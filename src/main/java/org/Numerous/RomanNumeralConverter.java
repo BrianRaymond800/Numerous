@@ -7,6 +7,8 @@ public class RomanNumeralConverter {
             numeral = convertLessThanNinety(number, numeral);
         }else{
             numeral += "XC";
+            number -= 90;
+            numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
