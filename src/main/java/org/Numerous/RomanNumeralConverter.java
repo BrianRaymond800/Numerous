@@ -6,9 +6,11 @@ public class RomanNumeralConverter {
         if(number < 4){
             numeral = convertLessThanFour(number, numeral);
         }else if(number < 5){
-            numeral = "IV";
+            numeral += "IV";
         }else{
-            numeral = "V";
+            numeral += "V";
+            number -= 5;
+            numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }

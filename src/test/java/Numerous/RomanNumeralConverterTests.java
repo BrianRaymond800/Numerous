@@ -30,4 +30,10 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(5);
         Assertions.assertEquals("V", romanNumeral);
     }
+
+    @Test
+    void testConvertSix(){
+        String romanNumeral = converter.convertToRomanNumeral(6);
+        Assertions.assertEquals("VI", romanNumeral);
+    }
 }
