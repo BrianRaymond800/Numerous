@@ -7,6 +7,8 @@ public class RomanNumeralConverter {
             numeral = convertLessThanForty(number, numeral);
         } else{
             numeral += "XL";
+            number -= 40;
+            numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
