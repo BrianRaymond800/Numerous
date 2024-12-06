@@ -96,4 +96,16 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(49);
         Assertions.assertEquals("XLIX", romanNumeral);
     }
+
+    @Test
+    void testConvertFifty(){
+        String romanNumeral = converter.convertToRomanNumeral(50);
+        Assertions.assertEquals("L", romanNumeral);
+    }
+
+    @Test
+    void testConvertEightyNine(){
+        String romanNumeral = converter.convertToRomanNumeral(89);
+        Assertions.assertEquals("LXXXIX", romanNumeral);
+    }
 }

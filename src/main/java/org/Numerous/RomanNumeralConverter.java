@@ -5,9 +5,13 @@ public class RomanNumeralConverter {
         String numeral = "";
         if(number < 40){
             numeral = convertLessThanForty(number, numeral);
-        } else{
+        } else if(number < 50){
             numeral += "XL";
             number -= 40;
+            numeral += convertToRomanNumeral(number);
+        } else{
+            numeral += "L";
+            number -= 50;
             numeral += convertToRomanNumeral(number);
         }
         return numeral;
