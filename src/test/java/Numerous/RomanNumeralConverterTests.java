@@ -84,4 +84,10 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(39);
         Assertions.assertEquals("XXXIX", romanNumeral);
     }
+
+    @Test
+    void testConvertForty(){
+        String romanNumeral = converter.convertToRomanNumeral(40);
+        Assertions.assertEquals("XL", romanNumeral);
+    }
 }

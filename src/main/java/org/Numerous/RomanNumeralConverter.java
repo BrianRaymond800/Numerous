@@ -3,6 +3,15 @@ package org.Numerous;
 public class RomanNumeralConverter {
     public String convertToRomanNumeral(int number){
         String numeral = "";
+        if(number < 40){
+            numeral = convertLessThanForty(number, numeral);
+        } else{
+            numeral += "XL";
+        }
+        return numeral;
+    }
+
+    private String convertLessThanForty(int number, String numeral){
         if(number < 9){
             numeral = convertLessThanNine(number, numeral);
         } else if(number < 10){
