@@ -156,4 +156,10 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(899);
         Assertions.assertEquals("DCCCXCIX", romanNumeral);
     }
+
+    @Test
+    void testConvertNineHundred(){
+        String romanNumeral = converter.convertToRomanNumeral(900);
+        Assertions.assertEquals("CM", romanNumeral);
+    }
 }
