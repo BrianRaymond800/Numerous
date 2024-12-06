@@ -108,4 +108,10 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(89);
         Assertions.assertEquals("LXXXIX", romanNumeral);
     }
+
+    @Test
+    void testConvertNinety(){
+        String romanNumeral = converter.convertToRomanNumeral(90);
+        Assertions.assertEquals("XC", romanNumeral);
+    }
 }
