@@ -5,9 +5,13 @@ public class RomanNumeralConverter {
         String numeral = "";
         if (number < 900){
             numeral = convertLessThanNineHundred(number, numeral);
-        }else{
+        }else if(number < 1000){
             numeral += "CM";
             number -= 900;
+            numeral += convertToRomanNumeral(number);
+        }else{
+            numeral += "M";
+            number -= 1000;
             numeral += convertToRomanNumeral(number);
         }
         return numeral;

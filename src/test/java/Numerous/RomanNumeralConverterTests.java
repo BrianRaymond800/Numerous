@@ -168,4 +168,16 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(999);
         Assertions.assertEquals("CMXCIX", romanNumeral);
     }
+
+    @Test
+    void testConvertOneThousand(){
+        String romanNumeral = converter.convertToRomanNumeral(1000);
+        Assertions.assertEquals("M", romanNumeral);
+    }
+
+    @Test
+    void testConvertThreeThousand(){
+        String romanNumeral = converter.convertToRomanNumeral(3000);
+        Assertions.assertEquals("MMM", romanNumeral);
+    }
 }
