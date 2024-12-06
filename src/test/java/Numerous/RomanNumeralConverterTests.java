@@ -48,4 +48,40 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(10);
         Assertions.assertEquals("X", romanNumeral);
     }
+
+    @Test
+    void testConvertEleven(){
+        String romanNumeral = converter.convertToRomanNumeral(11);
+        Assertions.assertEquals("XI", romanNumeral);
+    }
+
+    @Test
+    void testConvertFourteen(){
+        String romanNumeral = converter.convertToRomanNumeral(14);
+        Assertions.assertEquals("XIV", romanNumeral);
+    }
+
+    @Test
+    void testConvertFifteen(){
+        String romanNumeral = converter.convertToRomanNumeral(15);
+        Assertions.assertEquals("XV", romanNumeral);
+    }
+
+    @Test
+    void testConvertNineteen(){
+        String romanNumeral = converter.convertToRomanNumeral(19);
+        Assertions.assertEquals("XIX", romanNumeral);
+    }
+
+    @Test
+    void testConvertTwenty(){
+        String romanNumeral = converter.convertToRomanNumeral(20);
+        Assertions.assertEquals("XX", romanNumeral);
+    }
+
+    @Test
+    void testConvertThirtyNine(){
+        String romanNumeral = converter.convertToRomanNumeral(39);
+        Assertions.assertEquals("XXXIX", romanNumeral);
+    }
 }

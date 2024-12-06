@@ -9,6 +9,8 @@ public class RomanNumeralConverter {
             numeral += "IX";
         } else{
             numeral += "X";
+            number -= 10;
+            numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
