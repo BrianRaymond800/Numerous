@@ -7,6 +7,8 @@ public class RomanNumeralConverter {
             numeral = convertLessThanNineHundred(number, numeral);
         }else{
             numeral += "CM";
+            number -= 900;
+            numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
