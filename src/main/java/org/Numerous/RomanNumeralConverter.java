@@ -5,14 +5,15 @@ public class RomanNumeralConverter {
         String numeral = "";
         if(number < 4){
             numeral = convertLessThanFour(number, numeral);
-        }
-        else{
+        }else if(number < 5){
             numeral = "IV";
+        }else{
+            numeral = "V";
         }
         return numeral;
     }
 
-    public String convertLessThanFour(int number, String numeral){
+    private String convertLessThanFour(int number, String numeral){
         for(int i = 0; i < number; i ++){
             numeral += "I";
         }

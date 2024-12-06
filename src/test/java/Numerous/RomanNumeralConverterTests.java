@@ -24,4 +24,10 @@ public class RomanNumeralConverterTests {
         String romanNumeral = converter.convertToRomanNumeral(4);
         Assertions.assertEquals("IV", romanNumeral);
     }
+
+    @Test
+    void testConvertFive(){
+        String romanNumeral = converter.convertToRomanNumeral(5);
+        Assertions.assertEquals("V", romanNumeral);
+    }
 }
