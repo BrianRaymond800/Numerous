@@ -3,7 +3,7 @@ package org.Numerous;
 public class RomanNumeralConverter {
 
     private String[] numerals = {"M", "D", "C", "L", "X", "V", "I"};
-    private int[] numbers = {1000, 500, 100, 50, 10, 5, 1};
+    private int[] numbers = {1000, 500, 100, 50, 10, 5, 1, 0, 0};
 
     public String convertToRomanNumeral(int number){
         String numeral = "";
@@ -12,6 +12,9 @@ public class RomanNumeralConverter {
     }
 
     private String convertLessThanFourThousand(int number, String numeral){
+        if(number == 0){
+            return "";
+        }
         if (number < numbers[0] - numbers[2]){
             numeral = convertLessThanNineHundred(number, numeral);
         }else if(number < numbers[0]){
@@ -27,6 +30,9 @@ public class RomanNumeralConverter {
     }
 
     private String convertLessThanNineHundred(int number, String numeral){
+        if(number == 0){
+            return "";
+        }
         if(number < numbers[1] - numbers[2]){
             numeral = convertLessThanFourHundred(number, numeral);
         } else if(number < numbers[1]){
@@ -42,6 +48,9 @@ public class RomanNumeralConverter {
     }
 
     private String convertLessThanFourHundred(int number, String numeral){
+        if(number == 0){
+            return "";
+        }
         if(number < numbers[2] - numbers[4]){
             numeral = convertLessThanNinety(number, numeral);
         }else if(number < numbers[2]){
@@ -57,6 +66,9 @@ public class RomanNumeralConverter {
     }
 
     private String convertLessThanNinety(int number, String numeral){
+        if(number == 0){
+            return "";
+        }
         if(number < numbers[3] - numbers[4]){
             numeral = convertLessThanForty(number, numeral);
         } else if(number < numbers[3]){
@@ -72,6 +84,9 @@ public class RomanNumeralConverter {
     }
 
     private String convertLessThanForty(int number, String numeral){
+        if(number == 0){
+            return "";
+        }
         if(number < numbers[4] - numbers[6]){
             numeral = convertLessThanNine(number, numeral);
         } else if(number < numbers[4]){
@@ -87,6 +102,9 @@ public class RomanNumeralConverter {
     }
 
     private String convertLessThanNine(int number, String numeral){
+        if(number == 0){
+            return "";
+        }
         if(number < numbers[5] - numbers[6]){
             numeral = convertLessThanFour(number, numeral);
         } else if(number < numbers[5]){
@@ -103,8 +121,17 @@ public class RomanNumeralConverter {
     }
 
     private String convertLessThanFour(int number, String numeral){
-        for(int i = 0; i < number; i ++){
+        if(number == 0){
+            return "";
+        }
+        if(number < numbers[6] - numbers[8]){
+
+        } else if(number < numbers[6]){
+
+        } else{
             numeral += "I";
+            number -= numbers[6];
+            numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
