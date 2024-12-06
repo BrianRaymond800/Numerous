@@ -5,8 +5,10 @@ public class RomanNumeralConverter {
         String numeral = "";
         if(number < 400){
             numeral = convertLessThanFourHundred(number, numeral);
-        } else {
+        } else{
             numeral += "CD";
+            number -= 400;
+            numeral += convertToRomanNumeral(number);
         }
         return numeral;
     }
