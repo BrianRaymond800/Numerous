@@ -6,18 +6,18 @@ public class RomanNumeralConverter {
     private final int[] numbers = {1000, 500, 100, 50, 10, 5, 1, 0, 0};
 
     public String convertToRomanNumeral(int number){
+        int i = 0;
         String numeral = "";
-        numeral = convertLessThanFourThousand(number, numeral, 0);
-        return numeral;
+        return convert(number, numeral, i);
     }
 
-    private String convertLessThanFourThousand(int number, String numeral, int i){
+    private String convert(int number, String numeral, int i){
         if(number == 0){
             return "";
         }
         int subtractionNumber = i + 2 - (i % 2);
         if (number < numbers[i] - numbers[subtractionNumber]){
-            numeral = convertLessThanFourThousand(number, numeral, i + 1);
+            numeral = convert(number, numeral, i + 1);
         }else if(number < numbers[i]){
             numeral += numerals[subtractionNumber];
             numeral += numerals[i];
